@@ -1,0 +1,24 @@
+version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
+image: Visual Studio 2022
+configuration:
+- Debug
+- Release
+platform: Any CPU
+build:
+  parallel: true
+  verbosity: minimal
+before_build:
+- pwsh: 'Get-ChildItem -Recurse -Include *.csproj | % { [xml]$xml = Get-Content $_; $xml.SelectNodes("/Project/PropertyGroup/FileVersion") | % { $_."#text" += ".${Env:APPVEYOR_BUILD_NUMBER}" }; $xml.SelectNodes("/Project/PropertyGroup/InformationalVersion") | % { $_."#text" += "+${Env:APPVEYOR_REPO_COMMIT}" }; $xml.Save($_) }'
+- pwsh: dotnet restore -v quiet
+test_script:
+- pwsh: dotnet test -c $Env:CONFIGURATION /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=bin\$Env:CONFIGURATION\coverage.xml
+after_test:
+- pwsh: dotnet tool install --global Codecov.Tool --version 1.13.0
+- pwsh: codecov --file *\bin\$Env:CONFIGURATION\coverage.xml --flag $Env:CONFIGURATION
+artifacts:
+- path: '**\*.nupkg'
+  name: NuGet package
+- path: '**\*.snupkg'
+  name: NuGet symbols package

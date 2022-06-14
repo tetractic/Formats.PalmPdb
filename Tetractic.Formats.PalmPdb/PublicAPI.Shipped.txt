@@ -1,0 +1,77 @@
+﻿#nullable enable
+const Tetractic.Formats.PalmPdb.PdbFile.MaxRecordCount = 65535 -> int
+Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.AppInfoDirty = 4 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.Backup = 8 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.Bundle = 2048 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.CopyPrevention = 64 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.Hidden = 256 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.LaunchableData = 512 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.None = 0 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.OkayToInstallNewer = 16 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.Open = 32768 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.ReadOnly = 2 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.Recyclable = 1024 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.ResetAfterInstall = 32 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.ResourceDatabase = 1 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbAttributes.Stream = 128 -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbFile
+Tetractic.Formats.PalmPdb.PdbFile.AddRecord() -> Tetractic.Formats.PalmPdb.PdbRecord!
+Tetractic.Formats.PalmPdb.PdbFile.AppInfo.get -> byte[]?
+Tetractic.Formats.PalmPdb.PdbFile.AppInfo.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.Attributes.get -> Tetractic.Formats.PalmPdb.PdbAttributes
+Tetractic.Formats.PalmPdb.PdbFile.Attributes.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.BackupTime.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.BackupTime.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.CreationTime.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.CreationTime.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.CreatorId.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.CreatorId.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.Dispose() -> void
+Tetractic.Formats.PalmPdb.PdbFile.ModificationNumber.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.ModificationNumber.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.ModificationTime.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.ModificationTime.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.Name.get -> byte[]!
+Tetractic.Formats.PalmPdb.PdbFile.OriginalAppInfoOffset.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.OriginalSortInfoOffset.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.PdbFile() -> void
+Tetractic.Formats.PalmPdb.PdbFile.PdbFile(System.IO.Stream! stream, bool leaveOpen = false) -> void
+Tetractic.Formats.PalmPdb.PdbFile.Records.get -> System.Collections.Generic.IReadOnlyList<Tetractic.Formats.PalmPdb.PdbRecord!>!
+Tetractic.Formats.PalmPdb.PdbFile.RemoveRecord(Tetractic.Formats.PalmPdb.PdbRecord! record) -> bool
+Tetractic.Formats.PalmPdb.PdbFile.SortInfo.get -> byte[]?
+Tetractic.Formats.PalmPdb.PdbFile.SortInfo.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.TypeId.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.TypeId.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.UniqueIdSeed.get -> uint
+Tetractic.Formats.PalmPdb.PdbFile.UniqueIdSeed.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.Version.get -> ushort
+Tetractic.Formats.PalmPdb.PdbFile.Version.set -> void
+Tetractic.Formats.PalmPdb.PdbFile.WriteTo(System.IO.Stream! stream) -> void
+Tetractic.Formats.PalmPdb.PdbRecord
+Tetractic.Formats.PalmPdb.PdbRecord.Attributes.get -> Tetractic.Formats.PalmPdb.PdbRecordAttributes
+Tetractic.Formats.PalmPdb.PdbRecord.Attributes.set -> void
+Tetractic.Formats.PalmPdb.PdbRecord.Category.get -> byte
+Tetractic.Formats.PalmPdb.PdbRecord.Category.set -> void
+Tetractic.Formats.PalmPdb.PdbRecord.DataLength.get -> uint
+Tetractic.Formats.PalmPdb.PdbRecord.Dispose() -> void
+Tetractic.Formats.PalmPdb.PdbRecord.OpenData(System.IO.FileAccess access) -> System.IO.Stream!
+Tetractic.Formats.PalmPdb.PdbRecord.OriginalDataLength.get -> uint
+Tetractic.Formats.PalmPdb.PdbRecord.OriginalDataOffset.get -> uint
+Tetractic.Formats.PalmPdb.PdbRecord.UniqueId.get -> uint
+Tetractic.Formats.PalmPdb.PdbRecord.UniqueId.set -> void
+Tetractic.Formats.PalmPdb.PdbRecordAttributes
+Tetractic.Formats.PalmPdb.PdbRecordAttributes.Busy = 32 -> Tetractic.Formats.PalmPdb.PdbRecordAttributes
+Tetractic.Formats.PalmPdb.PdbRecordAttributes.Deleted = 128 -> Tetractic.Formats.PalmPdb.PdbRecordAttributes
+Tetractic.Formats.PalmPdb.PdbRecordAttributes.Dirty = 64 -> Tetractic.Formats.PalmPdb.PdbRecordAttributes
+Tetractic.Formats.PalmPdb.PdbRecordAttributes.None = 0 -> Tetractic.Formats.PalmPdb.PdbRecordAttributes
+Tetractic.Formats.PalmPdb.PdbRecordAttributes.Secret = 16 -> Tetractic.Formats.PalmPdb.PdbRecordAttributes
+Tetractic.Formats.PalmPdb.PdbWriter
+Tetractic.Formats.PalmPdb.PdbWriter.Dispose() -> void
+Tetractic.Formats.PalmPdb.PdbWriter.PdbWriter(System.IO.Stream! stream, bool leaveOpen = false) -> void
+Tetractic.Formats.PalmPdb.PdbWriter.WriteAppInfo(byte[]! appInfo) -> void
+Tetractic.Formats.PalmPdb.PdbWriter.WriteHeader(byte[]! name, Tetractic.Formats.PalmPdb.PdbAttributes attributes, ushort version, uint creationTime, uint modificationTime, uint backupTime, uint modificationNumber, int? appInfoLength, int? sortInfoLength, uint typeId, uint creatorId, uint uniqueIdSeed, ushort recordCount) -> void
+Tetractic.Formats.PalmPdb.PdbWriter.WriteRecordData(byte[]! data) -> void
+Tetractic.Formats.PalmPdb.PdbWriter.WriteRecordData(System.IO.Stream! dataSource) -> uint
+Tetractic.Formats.PalmPdb.PdbWriter.WriteRecordEntry(uint dataLength, Tetractic.Formats.PalmPdb.PdbRecordAttributes attributes, byte category, uint uniqueId) -> void
+Tetractic.Formats.PalmPdb.PdbWriter.WriteSortInfo(byte[]! sortInfo) -> void
