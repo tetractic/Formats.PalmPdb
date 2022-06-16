@@ -16,6 +16,7 @@ namespace Tetractic.Formats.PalmPdb.Dump
     {
         private static readonly TextWriter _bufferedConsoleOut = new StreamWriter(new BufferedStream(Console.OpenStandardOutput(), 0x10000), Console.OutputEncoding);
 
+        /// <exception cref="IOException"/>
         public static void Dump(byte[] bytes, string indent = "", bool writeOffset = false)
         {
             for (int offset = 0; offset < bytes.Length;)
@@ -45,6 +46,8 @@ namespace Tetractic.Formats.PalmPdb.Dump
             _bufferedConsoleOut.Flush();
         }
 
+        /// <exception cref="IOException"/>
+        // ExceptionAdjustment: M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32) -T:System.NotSupportedException
         public static void Dump(Stream stream, string indent = "", bool writeOffset = false)
         {
             byte[] bytes16 = new byte[16];

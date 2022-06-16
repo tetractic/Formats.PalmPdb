@@ -16,6 +16,7 @@ namespace Tetractic.Formats.PalmPdb.Dump
 {
     internal static class Program
     {
+        /// <exception cref="IOException"/>
         internal static int Main(string[] args)
         {
             var rootCommand = new RootCommand(GetExecutableName("PdbDump"));
@@ -75,6 +76,7 @@ namespace Tetractic.Formats.PalmPdb.Dump
             return defaultName;
         }
 
+        /// <exception cref="Exception"/>
         private static int Dump(string path, bool useMacEpoch, bool dumpHex, bool dumpFiles)
         {
             using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize: 0x10000))
