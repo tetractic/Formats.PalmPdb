@@ -164,7 +164,7 @@ namespace Tetractic.Formats.PalmPdb.Dump
         private static string GetPrintable(uint id)
         {
             Span<byte> bytes = stackalloc byte[4];
-            char[] chars = new char[4];
+            Span<char> chars = stackalloc char[4];
 
             BinaryPrimitives.WriteUInt32BigEndian(bytes, id);
 
