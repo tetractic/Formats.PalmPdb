@@ -1032,7 +1032,7 @@ namespace Tetractic.Formats.PalmPdb.Tests
                     var ex = Assert.Throws<ArgumentException>(() => writer.WriteRecordData(dataSource));
 
                     Assert.Equal("dataSource", ex.ParamName);
-                    Assert.StartsWith("The stream must be support reading.", ex.Message);
+                    Assert.StartsWith("Stream must support reading.", ex.Message);
                 }
             }
         }

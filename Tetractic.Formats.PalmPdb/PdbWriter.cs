@@ -477,7 +477,7 @@ namespace Tetractic.Formats.PalmPdb
             if (dataSource is null)
                 throw new ArgumentNullException(nameof(dataSource));
             if (!dataSource.CanRead)
-                throw new ArgumentException("The stream must be support reading.", nameof(dataSource));
+                throw new ArgumentException("Stream must support reading.", nameof(dataSource));
 
             ValidateWriteRecordData();
 
