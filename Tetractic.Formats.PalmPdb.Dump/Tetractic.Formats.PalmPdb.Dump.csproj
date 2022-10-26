@@ -5,7 +5,7 @@
     <TargetFramework>net6</TargetFramework>
     <AssemblyName>PdbDump</AssemblyName>
 
-    <LangVersion>8</LangVersion>
+    <LangVersion>8.0</LangVersion>
     <Features>strict</Features>
     <Nullable>enable</Nullable>
 
